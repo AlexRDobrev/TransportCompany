@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class TransportCompanyIncomeTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class TransportCompanyIncomeTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/default-package.html">default-package</a> &gt; TransportCompanyIncomeTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">1.999s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Method name</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">Proper calculation of company income</td>
+<td class="success">CalculatedIncomeTest()</td>
+<td class="success">1.999s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>[INFO ] 2022-01-24 09:30:20.380 [Test worker] Version - HHH000412: Hibernate Core {5.4.10.Final}
+[INFO ] 2022-01-24 09:30:20.385 [Test worker] Environment - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.connection.driver_class=com.mysql.cj.jdbc.Driver, hibernate.hbm2ddl.auto=update, hibernate.dialect=org.hibernate.dialect.MySQL5Dialect, hibernate.connection.password=****, hibernate.connection.username=root, hibernate.connection.url=jdbc:mysql://localhost:3306/transportcompanydb, hibernate.bytecode.use_reflection_optimizer=false, hibernate.show_sql=true}
+[INFO ] 2022-01-24 09:30:20.544 [Test worker] Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+[WARN ] 2022-01-24 09:30:20.652 [Test worker] pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[INFO ] 2022-01-24 09:30:20.657 [Test worker] pooling - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/transportcompanydb]
+[INFO ] 2022-01-24 09:30:20.658 [Test worker] pooling - HHH10001001: Connection properties: {password=****, user=root}
+[INFO ] 2022-01-24 09:30:20.658 [Test worker] pooling - HHH10001003: Autocommit mode: false
+[INFO ] 2022-01-24 09:30:20.660 [Test worker] DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+[INFO ] 2022-01-24 09:30:21.029 [Test worker] Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[INFO ] 2022-01-24 09:30:21.650 [Test worker] access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@b4002e6] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+[DEBUG] 2022-01-24 09:30:21.664 [Test worker] SQL - create table clients (id bigint not null auto_increment, name varchar(255) not null, primary key (id)) engine=MyISAM
+Hibernate: create table clients (id bigint not null auto_increment, name varchar(255) not null, primary key (id)) engine=MyISAM
+[DEBUG] 2022-01-24 09:30:21.672 [Test worker] SQL - create table drivers (id bigint not null auto_increment, name varchar(255) not null, qualification integer not null, salary double precision not null, transportCompany_id bigint, primary key (id)) engine=MyISAM
+Hibernate: create table drivers (id bigint not null auto_increment, name varchar(255) not null, qualification integer not null, salary double precision not null, transportCompany_id bigint, primary key (id)) engine=MyISAM
+[DEBUG] 2022-01-24 09:30:21.678 [Test worker] SQL - create table orders (id bigint not null auto_increment, IsPaid bit not null, dateOfArrival date not null, dateOfTravel date not null, finalDestination varchar(255) not null, price double precision not null, startingPoint varchar(255) not null, client_id bigint, driver_id bigint, primary key (id)) engine=MyISAM
+Hibernate: create table orders (id bigint not null auto_increment, IsPaid bit not null, dateOfArrival date not null, dateOfTravel date not null, finalDestination varchar(255) not null, price double precision not null, startingPoint varchar(255) not null, client_id bigint, driver_id bigint, primary key (id)) engine=MyISAM
+[DEBUG] 2022-01-24 09:30:21.685 [Test worker] SQL - create table transportCompanies (id bigint not null auto_increment, income double precision not null, name varchar(255) not null, primary key (id)) engine=MyISAM
+Hibernate: create table transportCompanies (id bigint not null auto_increment, income double precision not null, name varchar(255) not null, primary key (id)) engine=MyISAM
+[DEBUG] 2022-01-24 09:30:21.690 [Test worker] SQL - create table vehicles (id bigint not null auto_increment, vehicleType integer not null, transportCompany_id bigint, primary key (id)) engine=MyISAM
+Hibernate: create table vehicles (id bigint not null auto_increment, vehicleType integer not null, transportCompany_id bigint, primary key (id)) engine=MyISAM
+[DEBUG] 2022-01-24 09:30:21.697 [Test worker] SQL - alter table drivers add constraint FKishhvnj4fxyrwdhw4f8vyo53s foreign key (transportCompany_id) references transportCompanies (id)
+Hibernate: alter table drivers add constraint FKishhvnj4fxyrwdhw4f8vyo53s foreign key (transportCompany_id) references transportCompanies (id)
+[DEBUG] 2022-01-24 09:30:21.714 [Test worker] SQL - alter table orders add constraint FKm2dep9derpoaehshbkkatam3v foreign key (client_id) references clients (id)
+Hibernate: alter table orders add constraint FKm2dep9derpoaehshbkkatam3v foreign key (client_id) references clients (id)
+[DEBUG] 2022-01-24 09:30:21.732 [Test worker] SQL - alter table orders add constraint FKqohd0dujmkcb12rcjy4b1fj4u foreign key (driver_id) references drivers (id)
+Hibernate: alter table orders add constraint FKqohd0dujmkcb12rcjy4b1fj4u foreign key (driver_id) references drivers (id)
+[DEBUG] 2022-01-24 09:30:21.749 [Test worker] SQL - alter table vehicles add constraint FKa6waajj1coydby3stb4pgodhm foreign key (transportCompany_id) references transportCompanies (id)
+Hibernate: alter table vehicles add constraint FKa6waajj1coydby3stb4pgodhm foreign key (transportCompany_id) references transportCompanies (id)
+[INFO ] 2022-01-24 09:30:21.771 [Test worker] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[DEBUG] 2022-01-24 09:30:21.839 [Test worker] SQL - insert into drivers (name, qualification, salary) values (?, ?, ?)
+Hibernate: insert into drivers (name, qualification, salary) values (?, ?, ?)
+[TRACE] 2022-01-24 09:30:21.841 [Test worker] BasicBinder - binding parameter [1] as [VARCHAR] - [Gosho]
+[TRACE] 2022-01-24 09:30:21.841 [Test worker] BasicBinder - binding parameter [2] as [INTEGER] - [0]
+[TRACE] 2022-01-24 09:30:21.841 [Test worker] BasicBinder - binding parameter [3] as [DOUBLE] - [1200.0]
+[DEBUG] 2022-01-24 09:30:21.855 [Test worker] SQL - insert into drivers (name, qualification, salary) values (?, ?, ?)
+Hibernate: insert into drivers (name, qualification, salary) values (?, ?, ?)
+[TRACE] 2022-01-24 09:30:21.855 [Test worker] BasicBinder - binding parameter [1] as [VARCHAR] - [Mitra]
+[TRACE] 2022-01-24 09:30:21.855 [Test worker] BasicBinder - binding parameter [2] as [INTEGER] - [0]
+[TRACE] 2022-01-24 09:30:21.856 [Test worker] BasicBinder - binding parameter [3] as [DOUBLE] - [1500.0]
+[DEBUG] 2022-01-24 09:30:21.858 [Test worker] SQL - insert into drivers (name, qualification, salary) values (?, ?, ?)
+Hibernate: insert into drivers (name, qualification, salary) values (?, ?, ?)
+[TRACE] 2022-01-24 09:30:21.858 [Test worker] BasicBinder - binding parameter [1] as [VARCHAR] - [Sofron]
+[TRACE] 2022-01-24 09:30:21.858 [Test worker] BasicBinder - binding parameter [2] as [INTEGER] - [2]
+[TRACE] 2022-01-24 09:30:21.859 [Test worker] BasicBinder - binding parameter [3] as [DOUBLE] - [850.0]
+[DEBUG] 2022-01-24 09:30:21.862 [Test worker] SQL - insert into orders (IsPaid, client_id, dateOfArrival, dateOfTravel, driver_id, finalDestination, price, startingPoint) values (?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into orders (IsPaid, client_id, dateOfArrival, dateOfTravel, driver_id, finalDestination, price, startingPoint) values (?, ?, ?, ?, ?, ?, ?, ?)
+[TRACE] 2022-01-24 09:30:21.863 [Test worker] BasicBinder - binding parameter [1] as [BOOLEAN] - [false]
+[TRACE] 2022-01-24 09:30:21.864 [Test worker] BasicBinder - binding parameter [2] as [BIGINT] - [null]
+[TRACE] 2022-01-24 09:30:21.864 [Test worker] BasicBinder - binding parameter [3] as [DATE] - [2021-12-21]
+[TRACE] 2022-01-24 09:30:21.865 [Test worker] BasicBinder - binding parameter [4] as [DATE] - [2021-12-02]
+[TRACE] 2022-01-24 09:30:21.865 [Test worker] BasicBinder - binding parameter [5] as [BIGINT] - [null]
+[TRACE] 2022-01-24 09:30:21.865 [Test worker] BasicBinder - binding parameter [6] as [VARCHAR] - [Germany]
+[TRACE] 2022-01-24 09:30:21.865 [Test worker] BasicBinder - binding parameter [7] as [DOUBLE] - [191.25]
+[TRACE] 2022-01-24 09:30:21.865 [Test worker] BasicBinder - binding parameter [8] as [VARCHAR] - [Bulgaria]
+[DEBUG] 2022-01-24 09:30:21.868 [Test worker] SQL - insert into orders (IsPaid, client_id, dateOfArrival, dateOfTravel, driver_id, finalDestination, price, startingPoint) values (?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into orders (IsPaid, client_id, dateOfArrival, dateOfTravel, driver_id, finalDestination, price, startingPoint) values (?, ?, ?, ?, ?, ?, ?, ?)
+[TRACE] 2022-01-24 09:30:21.868 [Test worker] BasicBinder - binding parameter [1] as [BOOLEAN] - [false]
+[TRACE] 2022-01-24 09:30:21.868 [Test worker] BasicBinder - binding parameter [2] as [BIGINT] - [null]
+[TRACE] 2022-01-24 09:30:21.869 [Test worker] BasicBinder - binding parameter [3] as [DATE] - [2021-04-13]
+[TRACE] 2022-01-24 09:30:21.869 [Test worker] BasicBinder - binding parameter [4] as [DATE] - [2021-03-21]
+[TRACE] 2022-01-24 09:30:21.869 [Test worker] BasicBinder - binding parameter [5] as [BIGINT] - [null]
+[TRACE] 2022-01-24 09:30:21.869 [Test worker] BasicBinder - binding parameter [6] as [VARCHAR] - [America]
+[TRACE] 2022-01-24 09:30:21.869 [Test worker] BasicBinder - binding parameter [7] as [DOUBLE] - [341.25]
+[TRACE] 2022-01-24 09:30:21.870 [Test worker] BasicBinder - binding parameter [8] as [VARCHAR] - [Russia]
+[DEBUG] 2022-01-24 09:30:21.872 [Test worker] SQL - insert into orders (IsPaid, client_id, dateOfArrival, dateOfTravel, driver_id, finalDestination, price, startingPoint) values (?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into orders (IsPaid, client_id, dateOfArrival, dateOfTravel, driver_id, finalDestination, price, startingPoint) values (?, ?, ?, ?, ?, ?, ?, ?)
+[TRACE] 2022-01-24 09:30:21.872 [Test worker] BasicBinder - binding parameter [1] as [BOOLEAN] - [false]
+[TRACE] 2022-01-24 09:30:21.872 [Test worker] BasicBinder - binding parameter [2] as [BIGINT] - [null]
+[TRACE] 2022-01-24 09:30:21.872 [Test worker] BasicBinder - binding parameter [3] as [DATE] - [2021-06-12]
+[TRACE] 2022-01-24 09:30:21.873 [Test worker] BasicBinder - binding parameter [4] as [DATE] - [2021-05-15]
+[TRACE] 2022-01-24 09:30:21.873 [Test worker] BasicBinder - binding parameter [5] as [BIGINT] - [null]
+[TRACE] 2022-01-24 09:30:21.873 [Test worker] BasicBinder - binding parameter [6] as [VARCHAR] - [England]
+[TRACE] 2022-01-24 09:30:21.873 [Test worker] BasicBinder - binding parameter [7] as [DOUBLE] - [791.25]
+[TRACE] 2022-01-24 09:30:21.873 [Test worker] BasicBinder - binding parameter [8] as [VARCHAR] - [Norway]
+[DEBUG] 2022-01-24 09:30:21.875 [Test worker] SQL - insert into orders (IsPaid, client_id, dateOfArrival, dateOfTravel, driver_id, finalDestination, price, startingPoint) values (?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into orders (IsPaid, client_id, dateOfArrival, dateOfTravel, driver_id, finalDestination, price, startingPoint) values (?, ?, ?, ?, ?, ?, ?, ?)
+[TRACE] 2022-01-24 09:30:21.876 [Test worker] BasicBinder - binding parameter [1] as [BOOLEAN] - [false]
+[TRACE] 2022-01-24 09:30:21.876 [Test worker] BasicBinder - binding parameter [2] as [BIGINT] - [null]
+[TRACE] 2022-01-24 09:30:21.876 [Test worker] BasicBinder - binding parameter [3] as [DATE] - [2021-09-03]
+[TRACE] 2022-01-24 09:30:21.876 [Test worker] BasicBinder - binding parameter [4] as [DATE] - [2020-08-25]
+[TRACE] 2022-01-24 09:30:21.877 [Test worker] BasicBinder - binding parameter [5] as [BIGINT] - [null]
+[TRACE] 2022-01-24 09:30:21.877 [Test worker] BasicBinder - binding parameter [6] as [VARCHAR] - [China]
+[TRACE] 2022-01-24 09:30:21.877 [Test worker] BasicBinder - binding parameter [7] as [DOUBLE] - [1916.25]
+[TRACE] 2022-01-24 09:30:21.877 [Test worker] BasicBinder - binding parameter [8] as [VARCHAR] - [India]
+[DEBUG] 2022-01-24 09:30:21.883 [Test worker] SQL - update drivers set name=?, qualification=?, salary=? where id=?
+Hibernate: update drivers set name=?, qualification=?, salary=? where id=?
+[TRACE] 2022-01-24 09:30:21.884 [Test worker] BasicBinder - binding parameter [1] as [VARCHAR] - [Gosho]
+[TRACE] 2022-01-24 09:30:21.884 [Test worker] BasicBinder - binding parameter [2] as [INTEGER] - [0]
+[TRACE] 2022-01-24 09:30:21.884 [Test worker] BasicBinder - binding parameter [3] as [DOUBLE] - [1200.0]
+[TRACE] 2022-01-24 09:30:21.884 [Test worker] BasicBinder - binding parameter [4] as [BIGINT] - [1]
+[DEBUG] 2022-01-24 09:30:21.889 [Test worker] SQL - update orders set driver_id=? where id=?
+Hibernate: update orders set driver_id=? where id=?
+[TRACE] 2022-01-24 09:30:21.889 [Test worker] BasicBinder - binding parameter [1] as [BIGINT] - [1]
+[TRACE] 2022-01-24 09:30:21.889 [Test worker] BasicBinder - binding parameter [2] as [BIGINT] - [1]
+[DEBUG] 2022-01-24 09:30:21.892 [Test worker] SQL - update drivers set name=?, qualification=?, salary=? where id=?
+Hibernate: update drivers set name=?, qualification=?, salary=? where id=?
+[TRACE] 2022-01-24 09:30:21.892 [Test worker] BasicBinder - binding parameter [1] as [VARCHAR] - [Gosho]
+[TRACE] 2022-01-24 09:30:21.893 [Test worker] BasicBinder - binding parameter [2] as [INTEGER] - [0]
+[TRACE] 2022-01-24 09:30:21.893 [Test worker] BasicBinder - binding parameter [3] as [DOUBLE] - [1200.0]
+[TRACE] 2022-01-24 09:30:21.893 [Test worker] BasicBinder - binding parameter [4] as [BIGINT] - [1]
+[DEBUG] 2022-01-24 09:30:21.894 [Test worker] SQL - update orders set driver_id=? where id=?
+Hibernate: update orders set driver_id=? where id=?
+[TRACE] 2022-01-24 09:30:21.894 [Test worker] BasicBinder - binding parameter [1] as [BIGINT] - [1]
+[TRACE] 2022-01-24 09:30:21.895 [Test worker] BasicBinder - binding parameter [2] as [BIGINT] - [2]
+[DEBUG] 2022-01-24 09:30:21.898 [Test worker] SQL - update drivers set name=?, qualification=?, salary=? where id=?
+Hibernate: update drivers set name=?, qualification=?, salary=? where id=?
+[TRACE] 2022-01-24 09:30:21.898 [Test worker] BasicBinder - binding parameter [1] as [VARCHAR] - [Mitra]
+[TRACE] 2022-01-24 09:30:21.898 [Test worker] BasicBinder - binding parameter [2] as [INTEGER] - [0]
+[TRACE] 2022-01-24 09:30:21.898 [Test worker] BasicBinder - binding parameter [3] as [DOUBLE] - [1500.0]
+[TRACE] 2022-01-24 09:30:21.899 [Test worker] BasicBinder - binding parameter [4] as [BIGINT] - [2]
+[DEBUG] 2022-01-24 09:30:21.900 [Test worker] SQL - update orders set driver_id=? where id=?
+Hibernate: update orders set driver_id=? where id=?
+[TRACE] 2022-01-24 09:30:21.900 [Test worker] BasicBinder - binding parameter [1] as [BIGINT] - [2]
+[TRACE] 2022-01-24 09:30:21.900 [Test worker] BasicBinder - binding parameter [2] as [BIGINT] - [4]
+[DEBUG] 2022-01-24 09:30:21.903 [Test worker] SQL - update drivers set name=?, qualification=?, salary=? where id=?
+Hibernate: update drivers set name=?, qualification=?, salary=? where id=?
+[TRACE] 2022-01-24 09:30:21.903 [Test worker] BasicBinder - binding parameter [1] as [VARCHAR] - [Sofron]
+[TRACE] 2022-01-24 09:30:21.904 [Test worker] BasicBinder - binding parameter [2] as [INTEGER] - [2]
+[TRACE] 2022-01-24 09:30:21.904 [Test worker] BasicBinder - binding parameter [3] as [DOUBLE] - [850.0]
+[TRACE] 2022-01-24 09:30:21.904 [Test worker] BasicBinder - binding parameter [4] as [BIGINT] - [3]
+[DEBUG] 2022-01-24 09:30:21.905 [Test worker] SQL - update orders set driver_id=? where id=?
+Hibernate: update orders set driver_id=? where id=?
+[TRACE] 2022-01-24 09:30:21.905 [Test worker] BasicBinder - binding parameter [1] as [BIGINT] - [3]
+[TRACE] 2022-01-24 09:30:21.905 [Test worker] BasicBinder - binding parameter [2] as [BIGINT] - [3]
+[DEBUG] 2022-01-24 09:30:21.909 [Test worker] SQL - insert into transportCompanies (income, name) values (?, ?)
+Hibernate: insert into transportCompanies (income, name) values (?, ?)
+[TRACE] 2022-01-24 09:30:21.910 [Test worker] BasicBinder - binding parameter [1] as [DOUBLE] - [0.0]
+[TRACE] 2022-01-24 09:30:21.910 [Test worker] BasicBinder - binding parameter [2] as [VARCHAR] - [Speedy]
+[DEBUG] 2022-01-24 09:30:21.912 [Test worker] SQL - update drivers set transportCompany_id=? where id=?
+Hibernate: update drivers set transportCompany_id=? where id=?
+[TRACE] 2022-01-24 09:30:21.913 [Test worker] BasicBinder - binding parameter [1] as [BIGINT] - [1]
+[TRACE] 2022-01-24 09:30:21.913 [Test worker] BasicBinder - binding parameter [2] as [BIGINT] - [2]
+Mitra has accumulated 1916.25 for Speedy
+[DEBUG] 2022-01-24 09:30:21.920 [Test worker] SQL - update transportCompanies set income=?, name=? where id=?
+Hibernate: update transportCompanies set income=?, name=? where id=?
+[TRACE] 2022-01-24 09:30:21.921 [Test worker] BasicBinder - binding parameter [1] as [DOUBLE] - [1916.25]
+[TRACE] 2022-01-24 09:30:21.921 [Test worker] BasicBinder - binding parameter [2] as [VARCHAR] - [Speedy]
+[TRACE] 2022-01-24 09:30:21.921 [Test worker] BasicBinder - binding parameter [3] as [BIGINT] - [1]
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.1</a> at Jan 24, 2022, 9:30:22 AM</p>
+</div>
+</div>
+</body>
+</html>
